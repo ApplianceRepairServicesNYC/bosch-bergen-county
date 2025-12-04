@@ -753,20 +753,28 @@
         .learn-more-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: linear-gradient(135deg, var(--blue) 0%, #004494 100%);
             color: white;
-            padding: 12px 28px;
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
             margin-bottom: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 48, 135, 0.3);
             position: relative;
             overflow: hidden;
+        }
+        .learn-more-btn span {
+            font-weight: 400;
+            opacity: 0.85;
+            font-size: 14px;
+            border-left: 1px solid rgba(255,255,255,0.3);
+            padding-left: 10px;
+            margin-left: 2px;
         }
         .learn-more-btn::before {
             content: '';
@@ -782,15 +790,16 @@
             left: 100%;
         }
         .learn-more-btn:hover {
-            background: linear-gradient(135deg, #004494 0%, var(--dark) 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 48, 135, 0.4);
+            background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 18px rgba(0, 48, 135, 0.35);
             color: white;
         }
         .learn-more-btn::after {
             content: '→';
-            font-size: 16px;
+            font-size: 18px;
             transition: transform 0.3s ease;
+            margin-left: 5px;
         }
         .learn-more-btn:hover::after {
             transform: translateX(4px);
@@ -1511,8 +1520,7 @@
             <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">Factory Certified Bosch Service</h2>
             <div class="services-grid">
                 <div class="service">
-                    <a href="#expandable-content-washer" class="learn-more-btn" onclick="toggleExpand('washer'); return false;">Learn More</a>
-                    <h3>Bosch Washer Repair</h3>
+                    <a href="#expandable-content-washer" class="learn-more-btn" onclick="toggleExpand('washer'); return false;">Bosch Washer Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1573,8 +1581,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-dryer" class="learn-more-btn" onclick="toggleExpand('dryer'); return false;">Learn More</a>
-                    <h3>Bosch Dryer Repair</h3>
+                    <a href="#expandable-content-dryer" class="learn-more-btn" onclick="toggleExpand('dryer'); return false;">Bosch Dryer Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1635,8 +1642,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-oven" class="learn-more-btn" onclick="toggleExpand('oven'); return false;">Learn More</a>
-                    <h3>Bosch Oven & Range Repair</h3>
+                    <a href="#expandable-content-oven" class="learn-more-btn" onclick="toggleExpand('oven'); return false;">Bosch Oven & Range Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1705,8 +1711,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-refrigerator" class="learn-more-btn" onclick="toggleExpand('refrigerator'); return false;">Learn More</a>
-                    <h3>Bosch Refrigerator Repair</h3>
+                    <a href="#expandable-content-refrigerator" class="learn-more-btn" onclick="toggleExpand('refrigerator'); return false;">Bosch Refrigerator Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1775,8 +1780,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-dishwasher" class="learn-more-btn" onclick="toggleExpand('dishwasher'); return false;">Learn More</a>
-                    <h3>Bosch Dishwasher Repair</h3>
+                    <a href="#expandable-content-dishwasher" class="learn-more-btn" onclick="toggleExpand('dishwasher'); return false;">Bosch Dishwasher Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1841,8 +1845,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-cooktop" class="learn-more-btn" onclick="toggleExpand('cooktop'); return false;">Learn More</a>
-                    <h3>Bosch Cooktop Repair</h3>
+                    <a href="#expandable-content-cooktop" class="learn-more-btn" onclick="toggleExpand('cooktop'); return false;">Bosch Cooktop Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1911,8 +1914,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-microwave" class="learn-more-btn" onclick="toggleExpand('microwave'); return false;">Learn More</a>
-                    <h3>Bosch Microwave Repair</h3>
+                    <a href="#expandable-content-microwave" class="learn-more-btn" onclick="toggleExpand('microwave'); return false;">Bosch Microwave Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1981,8 +1983,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-wine-cooler" class="learn-more-btn" onclick="toggleExpand('wine-cooler'); return false;">Learn More</a>
-                    <h3>Bosch Wine Cooler Repair</h3>
+                    <a href="#expandable-content-wine-cooler" class="learn-more-btn" onclick="toggleExpand('wine-cooler'); return false;">Bosch Wine Cooler Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -2055,8 +2056,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-hood-vent" class="learn-more-btn" onclick="toggleExpand('hood-vent'); return false;">Learn More</a>
-                    <h3>Bosch Hood Vent Repair</h3>
+                    <a href="#expandable-content-hood-vent" class="learn-more-btn" onclick="toggleExpand('hood-vent'); return false;">Bosch Hood Vent Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
