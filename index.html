@@ -1526,7 +1526,7 @@
             <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">Factory Certified Bosch Service</h2>
             <div class="services-grid">
                 <div class="service">
-                    <a href="#expandable-content-washer" class="learn-more-btn" onclick="toggleExpand('washer'); return false;">Bosch Washer Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-washer" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Washer Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1587,7 +1587,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-dryer" class="learn-more-btn" onclick="toggleExpand('dryer'); return false;">Bosch Dryer Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-dryer" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Dryer Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1648,7 +1648,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-oven" class="learn-more-btn" onclick="toggleExpand('oven'); return false;">Bosch Oven & Range Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-oven" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Oven & Range Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1717,7 +1717,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-refrigerator" class="learn-more-btn" onclick="toggleExpand('refrigerator'); return false;">Bosch Refrigerator Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-refrigerator" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Refrigerator Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1786,7 +1786,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-dishwasher" class="learn-more-btn" onclick="toggleExpand('dishwasher'); return false;">Bosch Dishwasher Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-dishwasher" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Dishwasher Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1851,7 +1851,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-cooktop" class="learn-more-btn" onclick="toggleExpand('cooktop'); return false;">Bosch Cooktop Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-cooktop" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Cooktop Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1920,7 +1920,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-microwave" class="learn-more-btn" onclick="toggleExpand('microwave'); return false;">Bosch Microwave Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-microwave" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Microwave Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -1989,7 +1989,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-wine-cooler" class="learn-more-btn" onclick="toggleExpand('wine-cooler'); return false;">Bosch Wine Cooler Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-wine-cooler" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Wine Cooler Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -2062,7 +2062,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <a href="#expandable-content-hood-vent" class="learn-more-btn" onclick="toggleExpand('hood-vent'); return false;">Bosch Hood Vent Repair <span>Learn More</span></a>
+                    <a href="#expandable-content-hood-vent" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Hood Vent Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
                         <ul>
@@ -2641,6 +2641,28 @@
             }
         });
         
+        
+        // Toggle Service Card Dropdown
+        function toggleService(btn) {
+            const serviceCard = btn.closest('.service');
+            const isActive = serviceCard.classList.contains('active');
+            
+            // Close all other service cards
+            document.querySelectorAll('.service').forEach(function(card) {
+                card.classList.remove('active');
+                const cardBtn = card.querySelector('.learn-more-btn');
+                if (cardBtn) {
+                    cardBtn.querySelector('span').textContent = 'Learn More';
+                }
+            });
+            
+            // Toggle current card
+            if (!isActive) {
+                serviceCard.classList.add('active');
+                btn.querySelector('span').textContent = 'Show Less';
+            }
+        }
+
         function toggleExpand(id) {
             event.stopPropagation();
             var text = document.getElementById('expandable-text-' + id);
