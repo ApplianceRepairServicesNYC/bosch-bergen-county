@@ -2571,7 +2571,7 @@
             const services = document.querySelectorAll('.service');
             services.forEach(function(service) {
                 service.addEventListener('click', function(e) {
-                    if (e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.tagName === 'LI' || e.target.closest('.service-types ul')) {
+                    if (e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.tagName === 'LI' || e.target.closest('.service-types ul') || e.target.closest('.learn-more-btn')) {
                         return;
                     }
                     this.classList.toggle('active');
