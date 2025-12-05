@@ -757,29 +757,31 @@
             gap: 8px;
             background: linear-gradient(135deg, var(--blue) 0%, #004494 100%);
             color: white;
-            padding: 14px 20px;
+            padding: 16px 20px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 48, 135, 0.3);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             width: 100%;
-            max-width: 100%;
+            min-height: 56px;
             box-sizing: border-box;
             text-align: center;
+            line-height: 1.3;
+            flex-wrap: wrap;
         }
         .learn-more-btn span {
             font-weight: 400;
-            opacity: 0.85;
-            font-size: 13px;
+            opacity: 0.9;
+            font-size: 12px;
             border-left: 1px solid rgba(255,255,255,0.3);
             padding-left: 8px;
-            margin-left: 2px;
+            margin-left: 4px;
             white-space: nowrap;
         }
         .learn-more-btn::before {
@@ -1327,31 +1329,15 @@
                     <div class="services-btn" id="servicesToggle">Services</div>
                     <ul class="services-dropdown" id="servicesDropdown">
                         <button class="dropdown-close-btn" id="dropdownCloseBtn" aria-label="Close Services Menu">×</button>
-                        <li><a href="#bosch-washer-repair" aria-label="Washer Repair">Washer Repair</a></li>
-                        <li><a href="#bosch-dryer-repair" aria-label="Dryer Repair">Dryer Repair</a></li>
-                        <li><a href="#bosch-refrigerator-repair" aria-label="Refrigerator Repair">Refrigerator Repair</a></li>
-                        <li><a href="#bosch-dishwasher-repair" aria-label="Dishwasher Repair">Dishwasher Repair</a></li>
-                        <li><a href="#bosch-oven-repair" aria-label="Oven & Range Repair">Oven & Range Repair</a></li>
-                        <li><a href="#bosch-cooktop-repair" aria-label="Cooktop Repair">Cooktop Repair</a></li>
-                        <li><a href="#bosch-microwave-repair" aria-label="Microwave Repair">Microwave Repair</a></li>
-                        <li><a href="#bosch-wine-cooler-repair" aria-label="Wine Cooler Repair">Wine Cooler Repair</a></li>
-                        <li><a href="#top" aria-label="Installation & Maintenance">Installation & Maintenance</a></li>
-                        <li><a href="#top" aria-label="All Appliances Repair">All Appliances</a></li>
-                        <li class="submenu-toggle" id="additionalToggle">Additional Services</li>
-                        <div class="additional-submenu" id="additionalSubmenu">
-                            <li>Installation, Repair & Maintenance</li>
-                            <li>Refrigerator Compressor & Refrigerant Service</li>
-                            <li>Appliance Performance Optimization</li>
-                            <li>Appliance Relocation & Setup Assistance</li>
-                            <li>Smart Appliance Connectivity Support</li>
-                            <li>Professional Deep Cleaning Services</li>
-                            <li>Energy Efficiency Upgrades & Optimization</li>
-                            <li>Noise & Vibration Reduction Services</li>
-                            <li>Commercial & Multi-Unit Appliance Services</li>
-                            <li>Recalls & Safety Compliance</li>
-                            <li>EPA Section 608 Certification</li>
-                            <li>Appliance Warranty & Extended Service Plans</li>
-                        </div>
+                        <li><a href="#bosch-washer-repair" aria-label="Washer Repair">Bosch Washer Repair</a></li>
+                        <li><a href="#bosch-dryer-repair" aria-label="Dryer Repair">Bosch Dryer Repair</a></li>
+                        <li><a href="#bosch-refrigerator-repair" aria-label="Refrigerator Repair">Bosch Refrigerator Repair</a></li>
+                        <li><a href="#bosch-dishwasher-repair" aria-label="Dishwasher Repair">Bosch Dishwasher Repair</a></li>
+                        <li><a href="#bosch-oven-repair" aria-label="Oven & Range Repair">Bosch Oven & Range Repair</a></li>
+                        <li><a href="#bosch-cooktop-repair" aria-label="Cooktop Repair">Bosch Cooktop Repair</a></li>
+                        <li><a href="#bosch-microwave-repair" aria-label="Microwave Repair">Bosch Microwave Repair</a></li>
+                        <li><a href="#bosch-wine-cooler-repair" aria-label="Wine Cooler Repair">Bosch Wine Cooler Repair</a></li>
+                                                                        
                         <li><a href="#service-areas" style="color: white; text-decoration: none;">Service Areas</a></li>
                         <div class="service-areas-submenu" id="serviceAreasSubmenu">
                             <li>Allendale</li>
@@ -1525,7 +1511,7 @@
         <div class="container">
             <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">Factory Certified Bosch Service</h2>
             <div class="services-grid">
-                <div class="service">
+                <div class="service" id="bosch-washer-repair">
                     <a href="#expandable-content-washer" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Washer Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1586,7 +1572,7 @@
                         <button id="expandable-btn-washer" onclick="toggleExpand('washer')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-dryer-repair">
                     <a href="#expandable-content-dryer" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Dryer Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1647,7 +1633,7 @@
                         <button id="expandable-btn-dryer" onclick="toggleExpand('dryer')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-oven-repair">
                     <a href="#expandable-content-oven" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Oven & Range Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1716,7 +1702,7 @@
                         <button id="expandable-btn-oven" onclick="toggleExpand('oven')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-refrigerator-repair">
                     <a href="#expandable-content-refrigerator" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Refrigerator Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1785,7 +1771,7 @@
                         <button id="expandable-btn-fridge" onclick="toggleExpand('fridge')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-dishwasher-repair">
                     <a href="#expandable-content-dishwasher" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Dishwasher Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1850,7 +1836,7 @@
                         <button id="expandable-btn-dishwasher" onclick="toggleExpand('dishwasher')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-cooktop-repair">
                     <a href="#expandable-content-cooktop" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Cooktop Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1919,7 +1905,7 @@
                         <button id="expandable-btn-cooktop" onclick="toggleExpand('cooktop')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-microwave-repair">
                     <a href="#expandable-content-microwave" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Microwave Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1988,7 +1974,7 @@
                         <button id="expandable-btn-microwave" onclick="toggleExpand('microwave')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-wine-cooler-repair">
                     <a href="#expandable-content-wine-cooler" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Wine Cooler Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -2061,7 +2047,7 @@
                         <button id="expandable-btn-wine" onclick="toggleExpand('wine')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
                     </div>
                 </div>
-                <div class="service">
+                <div class="service" id="bosch-hood-vent-repair">
                     <a href="#expandable-content-hood-vent" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Hood Vent Repair <span>Learn More</span></a>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -2136,8 +2122,8 @@
     <section class="alt" id="contact">
         <div class="container">
             <section id="service-areas">
-                <h2>Service Areas – All of Bergen County, NJ</h2>
-                <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day Bosch appliance repair.</p>
+                <h2 style="text-align: center;">Service Areas – All of Bergen County, NJ</h2>
+                <p style="text-align: center;">We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day Bosch appliance repair.</p>
                 <div class="sa-dropdown-container">
                     <button class="sa-dropdown-button" id="saToggleBtn">View All Bergen County Service Areas</button>
                     <div class="sa-dropdown-content" id="saDropdownContent">
@@ -2448,20 +2434,20 @@
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#bosch-washer-repair">Washer Repair</a></li>
-                        <li><a href="#bosch-dryer-repair">Dryer Repair</a></li>
-                        <li><a href="#bosch-refrigerator-repair">Refrigerator Repair</a></li>
-                        <li><a href="#bosch-dishwasher-repair">Dishwasher Repair</a></li>
+                        <li><a href="#bosch-washer-repair">Bosch Washer Repair</a></li>
+                        <li><a href="#bosch-dryer-repair">Bosch Dryer Repair</a></li>
+                        <li><a href="#bosch-refrigerator-repair">Bosch Refrigerator Repair</a></li>
+                        <li><a href="#bosch-dishwasher-repair">Bosch Dishwasher Repair</a></li>
                         <li><a href="#bosch-oven-repair">Oven Repair</a></li>
-                        <li><a href="#bosch-microwave-repair">Microwave Repair</a></li>
+                        <li><a href="#bosch-microwave-repair">Bosch Microwave Repair</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>More Services</h3>
                     <ul>
-                        <li><a href="#bosch-cooktop-repair">Cooktop Repair</a></li>
-                        <li><a href="#bosch-wine-cooler-repair">Wine Cooler Repair</a></li>
+                        <li><a href="#bosch-cooktop-repair">Bosch Cooktop Repair</a></li>
+                        <li><a href="#bosch-wine-cooler-repair">Bosch Wine Cooler Repair</a></li>
                         <li><a href="#bosch-hood-vent-repair">Vent Hood Repair</a></li>
                         <li><a href="#top">Installation & Maintenance</a></li>
                         <li><a href="#top">All Appliances</a></li>
