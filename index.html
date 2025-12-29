@@ -756,13 +756,24 @@
             color: var(--red);
         }
         .service-image {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
             margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+            min-height: 150px;
         }
         .service-image img {
-            max-width: 100%;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            max-width: 200px;
+            width: auto;
             height: auto;
             max-height: 180px;
             object-fit: contain;
+            background: transparent;
         }
         .learn-more-btn {
             display: flex;
@@ -1515,7 +1526,7 @@
             <div class="services-grid">
                 <div class="service" id="bosch-washer-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/washer.webp" alt="Bosch Washer Repair" width="200" height="180">
+                        <img src="assets/images/appliances/washer.webp" alt="Bosch Washer Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-washer" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Washer Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1579,7 +1590,7 @@
                 </div>
                 <div class="service" id="bosch-dryer-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/dryer.webp" alt="Bosch Dryer Repair" width="200" height="180">
+                        <img src="assets/images/appliances/dryer.webp" alt="Bosch Dryer Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-dryer" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Dryer Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1643,7 +1654,7 @@
                 </div>
                 <div class="service" id="bosch-oven-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/oven.webp" alt="Bosch Oven Repair" width="200" height="180">
+                        <img src="assets/images/appliances/oven.webp" alt="Bosch Oven Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-oven" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Oven & Range Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1715,7 +1726,7 @@
                 </div>
                 <div class="service" id="bosch-refrigerator-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/refrigerator.webp" alt="Bosch Refrigerator Repair" width="200" height="180">
+                        <img src="assets/images/appliances/refrigerator.webp" alt="Bosch Refrigerator Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-refrigerator" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Refrigerator Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1787,7 +1798,7 @@
                 </div>
                 <div class="service" id="bosch-dishwasher-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/dishwasher.webp" alt="Bosch Dishwasher Repair" width="200" height="180">
+                        <img src="assets/images/appliances/dishwasher.webp" alt="Bosch Dishwasher Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-dishwasher" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Dishwasher Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1855,7 +1866,7 @@
                 </div>
                 <div class="service" id="bosch-cooktop-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/cooktop.webp" alt="Bosch Cooktop Repair" width="200" height="180">
+                        <img src="assets/images/appliances/cooktop.webp" alt="Bosch Cooktop Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-cooktop" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Cooktop Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1927,7 +1938,7 @@
                 </div>
                 <div class="service" id="bosch-microwave-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/microwave.webp" alt="Bosch Microwave Repair" width="200" height="180">
+                        <img src="assets/images/appliances/microwave.webp" alt="Bosch Microwave Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-microwave" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Microwave Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -1999,7 +2010,7 @@
                 </div>
                 <div class="service" id="bosch-wine-cooler-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler Repair" width="200" height="180">
+                        <img src="assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-wine-cooler" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Wine Cooler Repair <span>Learn More</span></a>
                     <div class="service-types">
@@ -2075,7 +2086,7 @@
                 </div>
                 <div class="service" id="bosch-hood-vent-repair">
                     <div class="service-image">
-                        <img src="/assets/images/appliances/hood-vent.webp" alt="Bosch Hood Vent Repair" width="200" height="180">
+                        <img src="assets/images/appliances/hood-vent.webp" alt="Bosch Hood Vent Repair" width="200" height="180">
                     </div>
                     <a href="#expandable-content-hood-vent" class="learn-more-btn" onclick="toggleService(this); return false;">Bosch Hood Vent Repair <span>Learn More</span></a>
                     <div class="service-types">
