@@ -1358,7 +1358,7 @@
                         <div class="service-areas-submenu" id="serviceAreasSubmenu"></div>
                     </ul>
                 </div>
-                <div class="nav-call-btn" id="navCallNow">Call Toll-Free</div>
+                <div class="nav-call-btn" id="navCallNow">📞 Call Now</div>
             </div>
         </div>
     </header>
@@ -1784,7 +1784,7 @@
             <section id="cf-schedule-container">
                 <div class="cf-schedule-text">Schedule Your Bosch Hood Vent Repair Online</div>
                 <button class="cf-book-button" id="cfBookButton">Book Online</button>
-                <button class="form-call-now" id="formCallNow">Call Toll-Free</button>
+                <button class="form-call-now" id="formCallNow">📞 Call Now</button>
                 <div class="cf-contact-form-section" id="cfContactFormSection">
                     <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
                     <form id="cfContactForm" class="cf-contact-form">
@@ -2535,11 +2535,11 @@
                     document.getElementById('cfContactFormSection').classList.toggle('active');
                 });
             }
-            // Call Toll-Free
+            // 📞 Call Now
             const setupCallButton = (btn) => {
                 if (btn) {
                     btn.addEventListener('click', function() {
-                        console.log(`Call Toll-Free button clicked: ${this.id} (mobile: ${window.innerWidth <= 768})`);
+                        console.log(`📞 Call Now button clicked: ${this.id} (mobile: ${window.innerWidth <= 768})`);
                         if (this.dataset.revealed) return;
                         const digits = [2, 0, 1, 2, 9, 8, 3, 4, 9, 9];
                         const num = digits.join('');
@@ -2552,7 +2552,7 @@
                         };
                     });
                 } else {
-                    console.error(`Call Toll-Free button not found: ${btn ? btn.id : 'null'}`);
+                    console.error(`📞 Call Now button not found: ${btn ? btn.id : 'null'}`);
                 }
             };
             setupCallButton(document.getElementById('navCallNow'));
