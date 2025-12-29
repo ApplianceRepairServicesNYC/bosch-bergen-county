@@ -390,11 +390,15 @@
             box-sizing: border-box;
         }
         .logo-link {
-            font-size: 26px;
+            font-size: 0;
             font-weight: 700;
             color: white;
             text-decoration: none;
             display: inline-block;
+        }
+        .logo-link img {
+            height: 45px;
+            width: auto;
         }
         .logo-link:hover {
             color: #ddd;
@@ -515,6 +519,7 @@
                 padding: 15px 0;
             }
             .logo-link {
+            font-size: 0;
                 margin-bottom: 10px;
             }
             .nav-right {
@@ -1295,7 +1300,9 @@
 <body>
     <header>
         <div class="container nav-wrapper">
-            <a href="#top" class="logo-link" aria-label="Return to Bosch Appliance Repair Bergen County Homepage">Bosch Appliance Repair Bergen County</a>
+            <a href="https://boschbergencounty.com/" class="logo-link" aria-label="Return to Bosch Appliance Repair Bergen County Homepage">
+                <img src="/assets/images/bosch-logo.svg" alt="Bosch Appliance Repair Bergen County NJ - Professional Bosch Appliance Repair Service" title="Bosch Appliance Repair Bergen County NJ" width="140" height="45" style="max-height: 45px;">
+            </a>
             <div class="nav-right">
                 <div class="services-menu" id="servicesMenu">
                     <div class="services-btn" id="servicesToggle">Services</div>
