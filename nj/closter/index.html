@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <link rel="preload" as="image" href="/assets/images/appliances/hero-appliances.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/appliances/hero-appliances.webp?v=2" fetchpriority="high">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bosch Appliance Repair Closter NJ - Authorized</title>
     <meta name="description" content="Bosch Appliance Repair in Closter NJ. Washer, Dryer, Oven, Dishwasher, Microwave, Cooktop, Refrigerator Repair.">
@@ -56,7 +56,7 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://boschbergencounty.com/assets/images/bosch-logo.svg",
+                "url": "https://boschbergencounty.com/assets/images/bosch-logo.png?v=2",
                 "width": 397,
                 "height": 127
             },
@@ -347,7 +347,7 @@
             text-align: center;
             padding: 160px 20px 120px;
             margin-top: 80px;
-            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('/assets/images/appliances/hero-appliances.webp') center center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('/assets/images/appliances/hero-appliances.webp?v=2') center center/cover no-repeat;
             background-attachment: scroll;
             min-height: 70vh;
             display: flex;
@@ -435,7 +435,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            align-items: start;
+            align-items: stretch;
         }
         .service {
             background: white;
@@ -470,14 +470,19 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         .service-icon {
-            font-size: 52px;
+            width: 100%;
+            height: 200px;
             margin-bottom: 20px;
-            color: var(--blue);
-            transition: color .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .service-icon img {
-            width: 52px;
-            height: 52px;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
         }
         .service:hover .service-icon {
@@ -995,7 +1000,7 @@
     <header>
         <div class="container nav-wrapper">
             <a href="https://boschbergencounty.com/" class="logo-link" aria-label="Return to Bosch Appliance Repair Bergen County Homepage">
-                <img src="/assets/images/bosch-logo.svg" alt="Bosch Appliance Repair Bergen County NJ - Professional Bosch Appliance Repair Service" title="Bosch Appliance Repair Bergen County NJ" width="140" height="45">
+                <img src="/assets/images/bosch-logo.png?v=2" alt="Bosch Appliance Repair Bergen County NJ - Professional Bosch Appliance Repair Service" title="Bosch Appliance Repair Bergen County NJ" width="140" height="45">
             </a>
             <div class="nav-right">
                 <div class="services-menu" id="servicesMenu">
@@ -1199,7 +1204,7 @@
             <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">Authorized Bosch Service Technicians Serving Closter</h2>
             <div class="services-grid">
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/washer.webp" alt="Bosch Washer repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/washer.webp?v=2" alt="Bosch Washer repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Washer Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1226,7 +1231,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/dryer.webp" alt="Bosch Dryer repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/dryer.webp?v=2" alt="Bosch Dryer repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Dryer Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1253,7 +1258,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/oven.webp" alt="Bosch Oven repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/oven.webp?v=2" alt="Bosch Oven repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Oven & Range Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1280,7 +1285,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/refrigerator.webp" alt="Bosch Refrigerator repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/refrigerator.webp?v=2" alt="Bosch Refrigerator repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Refrigerator Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1307,7 +1312,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/dishwasher.webp" alt="Bosch Dishwasher repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/dishwasher.webp?v=2" alt="Bosch Dishwasher repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Dishwasher Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1334,7 +1339,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/cooktop.webp" alt="Bosch Cooktop repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/cooktop.webp?v=2" alt="Bosch Cooktop repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Cooktop Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1361,7 +1366,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/microwave.webp" alt="Bosch Microwave repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/microwave.webp?v=2" alt="Bosch Microwave repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Microwave Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1388,7 +1393,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>
@@ -1415,7 +1420,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/hood-vent.webp" alt="Bosch Vent Hood repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/hood-vent.webp?v=2" alt="Bosch Vent Hood repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bosch Hood Vent Repair</h3>
                     <div class="service-types">
                         <h4>We Service All Types:</h4>

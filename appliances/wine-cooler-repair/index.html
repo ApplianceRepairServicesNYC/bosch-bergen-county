@@ -72,7 +72,7 @@
             ],
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://boschbergencounty.com/assets/images/bosch-logo.svg",
+                "url": "https://boschbergencounty.com/assets/images/bosch-logo.png?v=2",
                 "width": 397,
                 "height": 127
             },
@@ -363,7 +363,7 @@
             text-align: center;
             padding: 160px 20px 120px;
             margin-top: 80px;
-            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('/assets/images/appliances/hero-appliances.webp') center center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('/assets/images/appliances/hero-appliances.webp?v=2') center center/cover no-repeat;
             background-attachment: scroll;
             min-height: 70vh;
             display: flex;
@@ -451,7 +451,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            align-items: start;
+            align-items: stretch;
         }
         .service {
             background: white;
@@ -486,14 +486,19 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         .service-icon {
-            font-size: 52px;
+            width: 100%;
+            height: 200px;
             margin-bottom: 20px;
-            color: var(--blue);
-            transition: color .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .service-icon img {
-            width: 52px;
-            height: 52px;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
         }
         .service:hover .service-icon {
@@ -1011,7 +1016,7 @@
     <header>
         <div class="container nav-wrapper">
             <a href="https://boschbergencounty.com/" class="logo-link" aria-label="Return to Bosch Appliance Repair Bergen County Homepage">
-                <img src="/assets/images/bosch-logo.svg" alt="Bosch Appliance Repair Bergen County NJ - Professional Bosch Appliance Repair Service" title="Bosch Appliance Repair Bergen County NJ" width="140" height="45">
+                <img src="/assets/images/bosch-logo.png?v=2" alt="Bosch Appliance Repair Bergen County NJ - Professional Bosch Appliance Repair Service" title="Bosch Appliance Repair Bergen County NJ" width="140" height="45">
             </a>
             <div class="nav-right">
                 <div class="services-menu" id="servicesMenu">
@@ -1214,7 +1219,7 @@
             <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">Factory Certified Bosch Wine Cooler Repair</h2>
             <div class="services-grid">
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>French Door Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Common Issues We Fix:</h4>
@@ -1274,7 +1279,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Side-by-Side Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Common Issues We Fix:</h4>
@@ -1334,7 +1339,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Top Freezer Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Common Issues We Fix:</h4>
@@ -1394,7 +1399,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Bottom Freezer Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Common Issues We Fix:</h4>
@@ -1454,7 +1459,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Built-In Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Built-In Services:</h4>
@@ -1514,7 +1519,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Counter-Depth Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Counter-Depth Services:</h4>
@@ -1574,7 +1579,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Compact Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Compact Services:</h4>
@@ -1634,7 +1639,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Smart Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Smart Services:</h4>
@@ -1694,7 +1699,7 @@
                     </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp?v=2" alt="Bosch Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Commercial Wine Cooler Repair</h3>
                     <div class="service-types">
                         <h4>Commercial Services:</h4>
