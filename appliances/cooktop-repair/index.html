@@ -2295,6 +2295,12 @@
                 cfContactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const email = this.user_email.value.trim();
+                    // Copy email to hidden fields for template compatibility
+                    document.getElementById('cfReplyTo').value = email;
+                    document.getElementById('cfEmailHidden').value = email;
+                    document.getElementById('cfFromEmail').value = email;
+                    document.getElementById('cfCustomerEmail').value = email;
+                    document.getElementById('cfApplianceType').value = this.subject.value;
                     emailjs.sendForm('service_emxksio', 'template_tmexlql', this)
                         .then(function() {
                             cfContactForm.reset();

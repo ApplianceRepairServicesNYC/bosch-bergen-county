@@ -1544,9 +1544,28 @@
                     <form id="cfContactForm" class="cf-contact-form">
                         <div class="cf-form-group"><label for="cfName">Name *</label><input type="text" id="cfName" name="from_name" placeholder="John Doe" required></div>
                         <div class="cf-form-group"><label for="cfEmail">Email *</label><input type="email" id="cfEmail" name="user_email" placeholder="john@example.com" required></div>
+                        <input type="hidden" name="reply_to" id="cfReplyTo">
+                        <input type="hidden" name="email" id="cfEmailHidden">
+                        <input type="hidden" name="from_email" id="cfFromEmail">
+                        <input type="hidden" name="customer_email" id="cfCustomerEmail">
+                        <input type="hidden" name="appliance_type" id="cfApplianceType">
+                        <div class="cf-form-group"><label for="cfSubject">Appliance Type *</label>
+                            <select id="cfSubject" name="subject" required>
+                                <option value="" disabled selected>Select Appliance Type...</option>
+                                <option value="Bosch Refrigerator Repair">Bosch Refrigerator</option>
+                                <option value="Bosch Washer Repair">Bosch Washer</option>
+                                <option value="Bosch Dryer Repair">Bosch Dryer</option>
+                                <option value="Bosch Dishwasher Repair">Bosch Dishwasher</option>
+                                <option value="Bosch Oven/Range Repair">Bosch Oven/Range</option>
+                                <option value="Bosch Microwave Repair">Bosch Microwave</option>
+                                <option value="Bosch Cooktop Repair">Bosch Cooktop</option>
+                                <option value="Bosch Wine Cooler Repair">Bosch Wine Cooler</option>
+                                <option value="Other Bosch Appliance">Other</option>
+                            </select>
+                        </div>
                         <div class="cf-form-group"><label for="cfPhone">Phone *</label><input type="tel" id="cfPhone" name="phone" placeholder="1234567890" required pattern="[0-9]{10}"></div>
                         <div class="cf-form-group"><label for="cfAddress">Address *</label><textarea id="cfAddress" name="address" placeholder="123 Main St, Ridgewood, NJ 07450" required></textarea></div>
-                        <div class="cf-form-group"><label for="cfMessage">Describe the Problem & Appliance Type *</label><textarea id="cfMessage" name="message" placeholder="Please describe the issue and specify the appliance type (e.g., Bosch Refrigerator, Bosch Washer, etc.)" required></textarea></div>
+                        <div class="cf-form-group"><label for="cfMessage">Describe the Problem *</label><textarea id="cfMessage" name="message" placeholder="Please describe the issue with your Bosch appliance..." required></textarea></div>
                         <button type="submit" class="cf-form-button">Send Request</button>
                     </form>
                 </div>
@@ -1865,6 +1884,12 @@
                 cfContactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const email = this.user_email.value.trim();
+                    // Copy email to hidden fields for template compatibility
+                    document.getElementById('cfReplyTo').value = email;
+                    document.getElementById('cfEmailHidden').value = email;
+                    document.getElementById('cfFromEmail').value = email;
+                    document.getElementById('cfCustomerEmail').value = email;
+                    document.getElementById('cfApplianceType').value = this.subject.value;
                     emailjs.sendForm('service_emxksio', 'template_tmexlql', this)
                         .then(function() {
                             cfContactForm.reset();
