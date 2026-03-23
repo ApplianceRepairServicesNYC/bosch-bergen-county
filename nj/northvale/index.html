@@ -1069,7 +1069,7 @@
         <div class="container">
             <h1>Authorized Bosch Appliance Repair<br>Northvale, New Jersey</h1>
             <p>Same-Day Service • Factory-Trained Technicians • Northvale, NJ</p>
-            <button class="btn" id="heroCallNow">Request Service Today</button>
+            <a href="#contact" class="btn">Request Service Today</a>
         </div>
     </section>
     <section style="padding: 60px 0; background: #fff;" aria-labelledby="about-section-heading">
@@ -1488,7 +1488,7 @@
                     </div>
                 </div>
             </section>
-            <section id="cf-schedule-container">
+            <section id="contact">
                 <div class="cf-schedule-text">Schedule Your Bosch Repair Online</div>
                 <button class="cf-book-button" id="cfBookButton">Book Online</button>
                 <button class="form-call-now" id="formCallNow">📞 Call Toll-Free</button>
@@ -1806,6 +1806,16 @@
             });
             
             const cfBookButton = document.getElementById('cfBookButton');
+            // Auto-open form when clicking Request Service Today
+            document.querySelectorAll('a[href="#contact"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var formSection = document.getElementById('cfContactFormSection');
+                    if (formSection && !formSection.classList.contains('active')) {
+                        formSection.classList.add('active');
+                    }
+                });
+            });
+
             if (cfBookButton) {
                 cfBookButton.addEventListener('click', function() {
                     document.getElementById('cfContactFormSection').classList.toggle('active');
@@ -1830,7 +1840,7 @@
             
             setupCallButton(document.getElementById('navCallNow'));
             setupCallButton(document.getElementById('formCallNow'));
-            setupCallButton(document.getElementById('heroCallNow'));
+      setupCallButton(document.getElementById('heroCallNow'));
             
             const cfContactForm = document.getElementById('cfContactForm');
             if (cfContactForm) {
