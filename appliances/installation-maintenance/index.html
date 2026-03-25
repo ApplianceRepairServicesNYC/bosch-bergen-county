@@ -2037,6 +2037,7 @@
                         <li><a href="https://boschbergencounty.com/nj/">Service Areas</a></li>
                         <li><a href="https://boschbergencounty.com/sitemap/">Sitemap</a></li>
                         <li><a href="#contact">Schedule Service</a></li>
+                        <li><a href="#" id="footerReviewsLink">Reviews</a></li>
                         <li><a href="https://boschbergencounty.com/privacy-policy/">Privacy Policy</a></li>
                         <li><a href="https://boschbergencounty.com/terms-of-service/">Terms of Service</a></li>
                     </ul>
@@ -2284,8 +2285,16 @@
                     openModal('reviewsModal');
                 });
             }
-
-            // Write Review Button
+            // Footer Reviews Link
+            var footerReviewsLink = document.getElementById('footerReviewsLink');
+            if (footerReviewsLink) {
+                footerReviewsLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loadElfsightWidget();
+                    openModal('reviewsModal');
+                });
+            }
+// Write Review Button
             var writeReviewBtn = document.getElementById('writeReviewBtn');
             if (writeReviewBtn) {
                 writeReviewBtn.addEventListener('click', function() {

@@ -1079,6 +1079,68 @@
         <a href="https://boschbergencounty.com/terms-of-service/">Terms of Service</a>
     </nav>
 
+    <!-- Modal Overlay for Reviews -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Reviews Modal -->
+    <div class="modal-card" id="reviewsModal">
+        <div class="modal-header">
+            <h2>Customer Reviews</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div id="elfsightContainer">
+                <div class="elfsight-app-2942fb52-4463-41bc-bc83-d831b9da6f0e"></div>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #333;">
+                <button id="writeReviewBtn" style="background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
+                <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+                <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+                <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across Bergen County!</p>
+                <button id="reviewsCallBtn" style="background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Call Toll-Free</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Write Review Form Modal -->
+    <div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Write a Review</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <form id="reviewForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
+                    <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
+                    <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="reviewRating" value="0">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
+                    <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; resize: vertical; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
+                </div>
+                <button type="submit" style="width: 100%; background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
+            </form>
+            <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
+                <p style="color: #666; font-size: 16px;">Your feedback has been submitted.</p>
+            </div>
+        </div>
+    </div>
+
 <footer>
     <div class="footer-main">
       <div class="footer-grid">
@@ -1122,7 +1184,8 @@
             <li><a href="https://boschbergencounty.com/">Home</a></li>
             <li><a href="https://boschbergencounty.com/nj/">Service Areas</a></li>
                         <li><a href="https://boschbergencounty.com/sitemap/">Sitemap</a></li>
-            <li><a href="#contact">Schedule Service</a></li>
+                        <li><a href="#contact">Schedule Service</a></li>
+                        <li><a href="#" id="footerReviewsLink">Reviews</a></li>
             <li><a href="https://boschbergencounty.com/privacy-policy/">Privacy Policy</a></li>
             <li><a href="https://boschbergencounty.com/terms-of-service/">Terms of Service</a></li>
           </ul>
@@ -1464,6 +1527,128 @@
       if (cfModalOverlay) {
         cfModalOverlay.onclick = () => cfCloseModal && cfCloseModal.click();
       }
+
+      // Lazy load Elfsight widget
+      var elfsightLoaded = false;
+      function loadElfsightWidget() {
+          if (elfsightLoaded) return;
+          var script = document.createElement('script');
+          script.src = 'https://static.elfsight.com/platform/platform.js';
+          script.defer = true;
+          document.body.appendChild(script);
+          elfsightLoaded = true;
+      }
+
+      // Modal functionality
+      var modalOverlay = document.getElementById('modalOverlay');
+      var reviewsModal = document.getElementById('reviewsModal');
+      var writeReviewModal = document.getElementById('writeReviewModal');
+
+      function openModal(modalId) {
+          if (modalOverlay) modalOverlay.classList.add('active');
+          var modal = document.getElementById(modalId);
+          if (modal) modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closeAllModals() {
+          if (modalOverlay) modalOverlay.classList.remove('active');
+          if (reviewsModal) reviewsModal.classList.remove('active');
+          if (writeReviewModal) writeReviewModal.classList.remove('active');
+          document.body.style.overflow = '';
+      }
+
+      // Open Reviews Modal button
+      var openReviewsBtn = document.getElementById('openReviewsBtn');
+      if (openReviewsBtn) {
+          openReviewsBtn.addEventListener('click', function(e) {
+              e.preventDefault();
+              loadElfsightWidget();
+              openModal('reviewsModal');
+          });
+      }
+
+      // Footer Reviews Link
+      var footerReviewsLink = document.getElementById('footerReviewsLink');
+      if (footerReviewsLink) {
+          footerReviewsLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              loadElfsightWidget();
+              openModal('reviewsModal');
+          });
+      }
+
+      // Write Review Button
+      var writeReviewBtn = document.getElementById('writeReviewBtn');
+      if (writeReviewBtn) {
+          writeReviewBtn.addEventListener('click', function() {
+              if (reviewsModal) reviewsModal.classList.remove('active');
+              openModal('writeReviewModal');
+          });
+      }
+
+      // Close modal buttons
+      document.querySelectorAll('.modal-close').forEach(function(btn) {
+          btn.addEventListener('click', closeAllModals);
+      });
+
+      // Close on overlay click
+      if (modalOverlay) {
+          modalOverlay.addEventListener('click', closeAllModals);
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeAllModals();
+      });
+
+      // Star Rating functionality
+      var stars = document.querySelectorAll('#starRating .star');
+      var ratingInput = document.getElementById('reviewRating');
+      var currentRating = 0;
+
+      stars.forEach(function(star) {
+          star.addEventListener('click', function() {
+              currentRating = parseInt(this.getAttribute('data-rating'));
+              if (ratingInput) ratingInput.value = currentRating;
+              updateStars(currentRating);
+          });
+          star.addEventListener('mouseenter', function() {
+              updateStars(parseInt(this.getAttribute('data-rating')));
+          });
+          star.addEventListener('mouseleave', function() {
+              updateStars(currentRating);
+          });
+      });
+
+      function updateStars(rating) {
+          stars.forEach(function(star, index) {
+              star.textContent = index < rating ? '★' : '☆';
+              star.style.color = index < rating ? '#ffc107' : '#ccc';
+          });
+      }
+
+      // Review Form submission
+      var reviewForm = document.getElementById('reviewForm');
+      var reviewThankYou = document.getElementById('reviewThankYou');
+      if (reviewForm) {
+          reviewForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              reviewForm.style.display = 'none';
+              if (reviewThankYou) reviewThankYou.style.display = 'block';
+              setTimeout(function() {
+                  closeAllModals();
+                  reviewForm.reset();
+                  reviewForm.style.display = 'block';
+                  if (reviewThankYou) reviewThankYou.style.display = 'none';
+                  currentRating = 0;
+                  updateStars(0);
+              }, 3000);
+          });
+      }
+
+      // Setup reviewsCallBtn
+      setupCallButton(document.getElementById('reviewsCallBtn'));
     });
   </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"df4eaee1f863452385fca24b1c8a3813","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
