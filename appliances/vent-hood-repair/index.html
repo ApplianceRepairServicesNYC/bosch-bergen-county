@@ -1688,44 +1688,64 @@
         </div>
     </footer>
 
+    <!-- Modal Overlay for Reviews -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
     <!-- Reviews Modal -->
-    <div class="reviews-modal-overlay" id="reviewsModalOverlay">
-        <div class="reviews-modal">
-            <div class="reviews-modal-header">
-                <h2>Customer Reviews</h2>
-                <button class="reviews-modal-close" id="closeReviewsBtn">&times;</button>
+    <div class="modal-card" id="reviewsModal">
+        <div class="modal-header">
+            <h2>Customer Reviews</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div id="elfsightContainer">
+                <div class="elfsight-app-2942fb52-4463-41bc-bc83-d831b9da6f0e"></div>
             </div>
-            <div class="reviews-modal-content">
-                <div class="review-item">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Outstanding service! The technician arrived on time and fixed my Bosch dishwasher the same day. Very professional and knowledgeable. Highly recommend!"</p>
-                    <p class="review-author">— Michael R., Ridgewood</p>
+            <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #333;">
+                <button id="writeReviewBtn" style="background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
+                <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+                <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+                <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across Bergen County!</p>
+                <button id="reviewsCallBtn" style="background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">📞 Call Toll-Free</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Write Review Form Modal -->
+    <div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Write a Review</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <form id="reviewForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
+                    <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
                 </div>
-                <div class="review-item">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"My Bosch refrigerator stopped cooling and they had a technician here within 2 hours. Fixed the issue quickly and the price was very fair. Will definitely use again."</p>
-                    <p class="review-author">— Sarah T., Paramus</p>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
+                    <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="reviewRating" value="0">
                 </div>
-                <div class="review-item">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Excellent experience from start to finish. The office staff was helpful scheduling and the repair tech knew exactly what was wrong with my Bosch washer. Fixed in under an hour!"</p>
-                    <p class="review-author">— David L., Hackensack</p>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
+                    <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; resize: vertical; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
                 </div>
-                <div class="review-item">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Best appliance repair service in Bergen County. They've fixed my Bosch oven and dryer over the years. Always reliable, always professional. 5 stars!"</p>
-                    <p class="review-author">— Jennifer M., Teaneck</p>
-                </div>
-                <div class="review-item">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Called in the morning, technician was here by afternoon. He diagnosed the problem with my Bosch cooktop immediately and had it working perfectly. Great service!"</p>
-                    <p class="review-author">— Robert K., Fort Lee</p>
-                </div>
-                <div style="text-align: center; margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
-                    <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
-                    <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across Bergen County!</p>
-                    <button class="form-call-now" id="reviewsCallBtn" style="margin: 0 auto;">Call Toll-Free</button>
-                </div>
+                <button type="submit" style="width: 100%; background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
+            </form>
+            <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
+                <p style="color: #666; font-size: 16px;">Your feedback has been submitted.</p>
             </div>
         </div>
     </div>
