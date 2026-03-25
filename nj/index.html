@@ -349,7 +349,88 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(228,30,38,0.5);
     }
-    @media (max-width: 768px) {
+        .reviews-btn {
+            background: transparent !important;
+            border: 2px solid white !important;
+            color: white;
+        }
+        .reviews-btn:hover {
+            background: rgba(255,255,255,0.1) !important;
+            transform: translateY(-3px);
+        }
+        /* Reviews Modal Styles */
+        .reviews-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .reviews-modal-overlay.active {
+            display: flex;
+        }
+        .reviews-modal {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .reviews-modal-header {
+            background: linear-gradient(135deg, #003087 0%, #00205B 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .reviews-modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .reviews-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+        .reviews-modal-content {
+            padding: 25px;
+        }
+        .review-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        .review-stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .review-text {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .review-author {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
       .hero {
         padding: 130px 15px 90px;
         min-height: 65vh;
@@ -872,9 +953,12 @@
     <div class="container">
       <h1>Our Service Areas<br>Bergen County, New Jersey</h1>
       <p>We proudly serve every town in Bergen County, NJ with fast, reliable, same-day Bosch appliance repair services.</p>
-      <a href="#contact" class="btn">Request Service Today</a>
-    </div>
-  </section>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact" class="btn">Schedule Your Repair</a>
+                <button class="btn reviews-btn" id="openReviewsBtn">★ Read Reviews</button>
+            </div>
+        </div>
+    </section>
   <section class="alt">
     <div class="container">
       <section class="service-areas-section" id="serviceAreasSection">

@@ -340,6 +340,87 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(228, 30, 38, 0.5);
         }
+        .reviews-btn {
+            background: transparent !important;
+            border: 2px solid white !important;
+            color: white;
+        }
+        .reviews-btn:hover {
+            background: rgba(255,255,255,0.1) !important;
+            transform: translateY(-3px);
+        }
+        /* Reviews Modal Styles */
+        .reviews-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .reviews-modal-overlay.active {
+            display: flex;
+        }
+        .reviews-modal {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .reviews-modal-header {
+            background: linear-gradient(135deg, #003087 0%, #00205B 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .reviews-modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .reviews-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+        .reviews-modal-content {
+            padding: 25px;
+        }
+        .review-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        .review-stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .review-text {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .review-author {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
         @media (max-width: 768px) {
             .hero {
                 padding: 160px 15px 90px;
@@ -1079,7 +1160,10 @@
         <div class="container">
             <h1>Authorized Bosch Appliance Repair<br>Ridgefield Park, New Jersey</h1>
             <p>Same-Day Service • Factory-Trained Technicians • Ridgefield Park, NJ</p>
-            <a href="#contact" class="btn">Request Service Today</a>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact" class="btn">Schedule Your Repair</a>
+                <button class="btn reviews-btn" id="openReviewsBtn">★ Read Reviews</button>
+            </div>
         </div>
     </section>
     <section style="padding: 60px 0; background: #fff;" aria-labelledby="about-section-heading">
@@ -1733,6 +1817,49 @@
             </div>
         </div>
     </footer>
+
+    <!-- Reviews Modal -->
+    <div class="reviews-modal-overlay" id="reviewsModalOverlay">
+        <div class="reviews-modal">
+            <div class="reviews-modal-header">
+                <h2>Customer Reviews</h2>
+                <button class="reviews-modal-close" id="closeReviewsBtn">&times;</button>
+            </div>
+            <div class="reviews-modal-content">
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Outstanding service! The technician arrived on time and fixed my Bosch dishwasher the same day. Very professional and knowledgeable. Highly recommend!"</p>
+                    <p class="review-author">— Michael R., Ridgewood</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"My Bosch refrigerator stopped cooling and they had a technician here within 2 hours. Fixed the issue quickly and the price was very fair. Will definitely use again."</p>
+                    <p class="review-author">— Sarah T., Paramus</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Excellent experience from start to finish. The office staff was helpful scheduling and the repair tech knew exactly what was wrong with my Bosch washer. Fixed in under an hour!"</p>
+                    <p class="review-author">— David L., Hackensack</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best appliance repair service in Bergen County. They've fixed my Bosch oven and dryer over the years. Always reliable, always professional. 5 stars!"</p>
+                    <p class="review-author">— Jennifer M., Teaneck</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Called in the morning, technician was here by afternoon. He diagnosed the problem with my Bosch cooktop immediately and had it working perfectly. Great service!"</p>
+                    <p class="review-author">— Robert K., Fort Lee</p>
+                </div>
+                <div style="text-align: center; margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+                    <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+                    <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across Bergen County!</p>
+                    <button class="form-call-now" id="reviewsCallBtn" style="margin: 0 auto;">Call Toll-Free</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const servicesMenu = document.getElementById('servicesMenu');
